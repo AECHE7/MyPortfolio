@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogPost from '../components/BlogPost.astro';
+
+const posts = [
+    {
+        title: 'Blog Post Title 1',
+        date: 'November 11, 2025',
+        url: '#'
+    },
+    {
+        title: 'Blog Post Title 2',
+        date: 'November 11, 2025',
+        url: '#'
+    },
+    {
+        title: 'Blog Post Title 3',
+        date: 'November 11, 2025',
+        url: '#'
+    }
+];
+---
+<Layout title="Blog | Jules - Software Engineer & UX/UI Designer" description="Read articles and tutorials by Jules, a software engineer and UX/UI designer.">
+    <section id="blog">
+        <h2>Blog</h2>
+        {posts.map(post => (
+            <BlogPost title={post.title} date={post.date} url={post.url} />
+        ))}
+    </section>
+</Layout>

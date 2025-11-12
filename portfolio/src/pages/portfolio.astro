@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+    {
+        title: 'Project Title 1',
+        description: 'A brief description of the project.',
+        url: '#'
+    },
+    {
+        title: 'Project Title 2',
+        description: 'A brief description of the project.',
+        url: '#'
+    },
+    {
+        title: 'Project Title 3',
+        description: 'A brief description of the project.',
+        url: '#'
+    }
+];
+---
+<Layout title="Portfolio | Jules - Software Engineer & UX/UI Designer" description="Browse a selection of projects by Jules, a software engineer and UX/UI designer.">
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        {projects.map(project => (
+            <ProjectCard title={project.title} description={project.description} url={project.url} />
+        ))}
+    </section>
+</Layout>
